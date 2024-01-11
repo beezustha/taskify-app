@@ -22,6 +22,10 @@ export default function App() {
 		setNewItems("");
 	};
 	// console.log(todos);
+
+	const deleteTodo = (id) => {
+		setTodos((currTodo) => currTodo.filter((todo) => todo.id !== id));
+	};
 	return (
 		<>
 			<form action="" onSubmit={handleSubmit}>
@@ -49,7 +53,10 @@ export default function App() {
 							className="h-48 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							placeholder="Enter the task description"
 						></textarea>
-						<button className="rounded bg-purple-700 text-white mx-auto my-4 px-2 py-2">
+						<button
+							className="rounded bg-purple-700 text-white mx-auto my-4 px-2 py-2"
+							onClick={() => deleteTodo(todo.id)}
+						>
 							Create Task
 						</button>
 					</div>
@@ -91,7 +98,7 @@ export default function App() {
 											strokeWidth={1.5}
 											stroke="white"
 											className="w-6 h-6"
-											// onClick={deleteTodo}
+											onClick={() => deleteTodo(todo.id)}
 										>
 											<path
 												strokeLinecap="round"
@@ -101,7 +108,7 @@ export default function App() {
 										</svg>
 									</div>
 								</div>
-								<p className="font-normal text-gray-700 dark:text-gray-400 text-base ">
+								<p className="font-normal text-gray-700 dark:text-gray-400 text-base">
 									{todo.description}
 								</p>
 							</div>
