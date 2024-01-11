@@ -20,13 +20,13 @@ export default function App() {
     <>
       <form action="" onSubmit={handleSubmit}>
         {" "}
-        <div className="container bg-[#424769] mx-auto h-[400px] flex flex-col items-center justify-center">
+        <div className="container w-screen bg-[#424769] mx-auto h-[480px] flex flex-col items-center justify-center font-poppins">
           <div className="mx-auto">
-            <h3 className="header-title text-center font-roboto p-8 text-2xl text-white">
+            <h3 className="header-title text-center p-8 text-2xl text-white">
               Taskify Application
             </h3>
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center w-full px-4">
             <input
               value={newItems}
               onChange={(e) => {
@@ -40,8 +40,7 @@ export default function App() {
               value={descriptions}
               onChange={(e) => setDescriptions(e.target.value)}
               id="message"
-              rows="4"
-              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="h-48 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Enter the task description"
             ></textarea>
             <button className="rounded bg-purple-700 text-white mx-auto my-4 px-2 py-2">
@@ -51,7 +50,7 @@ export default function App() {
         </div>
       </form>
       <div className="container mx-auto h-auto flex flex-col items-center justify-center mt-3  text-2xl">
-        <div className="text-purple-700 font-salsa">Todo Information</div>
+        <div className="text-purple-700">Todo Information</div>
         {todos.map((todo) => {
           return (
             <>
