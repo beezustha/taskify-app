@@ -55,7 +55,7 @@ export default function App() {
 						></textarea>
 						<button
 							className="rounded bg-purple-700 text-white mx-auto my-4 px-2 py-2"
-							onClick={() => deleteTodo(todo.id)}
+							onClick={() => deleteTodo(todos.id)}
 						>
 							Create Task
 						</button>
